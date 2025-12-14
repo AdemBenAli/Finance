@@ -28,10 +28,10 @@ export default function Quiz() {
       question: '💰 Quel est votre chiffre d\'affaires annuel actuel ?',
       options: [
         { text: 'Moins de 500 000 TND', score: 0 },
-        { text: '500 000 - 1 million TND', score: 2 },
-        { text: '1 - 3 millions TND', score: 4 },
-        { text: '3 - 10 millions TND', score: 5 },
-        { text: 'Plus de 10 millions TND', score: 5 },
+        { text: '500 000 - 1 mille TND', score: 2 },
+        { text: '1 - 3 milles TND', score: 4 },
+        { text: '3 - 10 milles TND', score: 5 },
+        { text: 'Plus de 10 milles TND', score: 5 },
       ],
     },
     {
@@ -79,10 +79,10 @@ export default function Quiz() {
       question: '💵 Quel montant de capital recherchez-vous ?',
       options: [
         { text: 'Moins de 500 000 TND', score: 1 },
-        { text: '500 000 - 1 million TND', score: 3 },
-        { text: '1 - 3 millions TND', score: 5 },
-        { text: '3 - 5 millions TND', score: 5 },
-        { text: 'Plus de 5 millions TND', score: 4 },
+        { text: '500 000 - 1 mille TND', score: 3 },
+        { text: '1 - 3 milles TND', score: 5 },
+        { text: '3 - 5 milles TND', score: 5 },
+        { text: 'Plus de 5 milles TND', score: 4 },
       ],
     },
     {

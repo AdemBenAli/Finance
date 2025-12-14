@@ -37,7 +37,7 @@ export default function Chatbot() {
     { key: 'revenue', question: '💰 Quel est votre chiffre d\'affaires annuel en TND ? (ex: 2000000 pour 2 MDT)' },
     { key: 'growthRate', question: '📈 Quel est votre taux de croissance annuel moyen sur les 3 dernières années ? (%, ex: 25)' },
     { key: 'debtLevel', question: '📊 Quel est votre niveau d\'endettement actuel ? (Faible / Modéré / Élevé)' },
-    { key: 'capitalNeeded', question: '💵 Quel montant de capital recherchez-vous ? (en millions TND, ex: 2.5)' },
+    { key: 'capitalNeeded', question: '💵 Quel montant de capital recherchez-vous ? (en milles TND, ex: 2.5)' },
     { key: 'purpose', question: '🎯 À quoi servira principalement ce capital ? (Expansion / Équipement / International / R&D / Recrutement)' },
     { key: 'acceptInvestor', question: '🤝 Acceptez-vous l\'entrée d\'un investisseur stratégique dans votre capital ? (Oui / Non)' },
     { key: 'maxDilution', question: '📉 Quel pourcentage maximum du capital êtes-vous prêt à céder ? (%, ex: 25 - généralement entre 20% et 40%)' },
@@ -154,10 +154,10 @@ export default function Chatbot() {
     const investmentStructure = eligible
       ? `💼 **Proposition d'Investissement :**
       
-• **Montant :** ${capitalNeeded} millions TND
+• **Montant :** ${capitalNeeded} milles TND
 • **Participation :** ${Math.min(maxDilution, 35)}% du capital (minoritaire significatif)
-• **Valorisation pré-money :** ${((capitalNeeded / (maxDilution / 100)) - capitalNeeded).toFixed(2)} millions TND
-• **Valorisation post-money :** ${(capitalNeeded / (maxDilution / 100)).toFixed(2)} millions TND
+• **Valorisation pré-money :** ${((capitalNeeded / (maxDilution / 100)) - capitalNeeded).toFixed(2)} milles TND
+• **Valorisation post-money :** ${(capitalNeeded / (maxDilution / 100)).toFixed(2)} milles TND
 • **Type d'intervention :** Capital Développement (Private Equity minoritaire)
 • **Forme juridique :** Augmentation de capital + Pacte d'actionnaires
       
@@ -278,7 +278,7 @@ Management Buy-Out (MBO) - Rachat des actions du fonds par les fondateurs/dirige
       sector: answers.sector,
       sectorPriority: sectorAnalysis[sectorComment] || '📊 Secteur à analyser',
       duration: answers.exitHorizon || '5-7 ans',
-      capitalNeeded: `${capitalNeeded} millions TND`,
+      capitalNeeded: `${capitalNeeded} milles TND`,
       dilution: `${maxDilution}%`,
       growthRate: `${growthRate}%`,
     });
