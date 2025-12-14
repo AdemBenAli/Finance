@@ -311,50 +311,50 @@ export default function Quiz() {
     const colors = colorClasses[result.color as keyof typeof colorClasses];
 
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 py-8 px-4">
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 py-4 sm:py-8 px-3 sm:px-4">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-8">
-            <h1 className="text-4xl font-bold text-slate-900 mb-2">📊 Résultats de l'Évaluation</h1>
-            <p className="text-slate-600">Votre analyse d'éligibilité au Capital Développement</p>
+          <div className="text-center mb-4 sm:mb-8">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-2">📊 Résultats de l'Évaluation</h1>
+            <p className="text-sm sm:text-base text-slate-600">Votre analyse d'éligibilité au Capital Développement</p>
           </div>
 
-          <div className="bg-white rounded-3xl shadow-2xl p-8 animate-fadeIn">
-            <div className="text-center mb-6">
+          <div className="bg-white rounded-2xl sm:rounded-3xl shadow-2xl p-4 sm:p-8 animate-fadeIn">
+            <div className="text-center mb-4 sm:mb-6">
               {result.icon}
-              <h2 className="text-3xl font-bold text-slate-900 mt-4">{result.title}</h2>
-              <p className="text-slate-600 mt-2">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 mt-4">{result.title}</h2>
+              <p className="text-sm sm:text-base text-slate-600 mt-2">
                 Score: {totalScore} / {questions.length * 5}
               </p>
             </div>
 
-            <div className={`bg-gradient-to-br ${colors.bg} border-2 ${colors.border} rounded-2xl p-6 mb-6`}>
-              <p className="text-slate-800 leading-relaxed text-lg">{result.description}</p>
+            <div className={`bg-gradient-to-br ${colors.bg} border-2 ${colors.border} rounded-xl sm:rounded-2xl p-4 sm:p-6 mb-4 sm:mb-6`}>
+              <p className="text-sm sm:text-base md:text-lg text-slate-800 leading-relaxed">{result.description}</p>
             </div>
 
-            <div className="mb-6">
-              <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-center">
-                <Brain className="mr-2 text-blue-600" size={24} />
+            <div className="mb-4 sm:mb-6">
+              <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-3 sm:mb-4 flex items-center">
+                <Brain className="mr-2 text-blue-600" size={20} />
                 💡 Recommandations Stratégiques
               </h3>
-              <ul className="space-y-3">
+              <ul className="space-y-2 sm:space-y-3">
                 {result.recommendations.map((rec, index) => (
                   <li key={index} className="flex items-start">
-                    <ArrowRight className="text-emerald-600 mr-2 flex-shrink-0 mt-1" size={20} />
-                    <span className="text-slate-700">{rec}</span>
+                    <ArrowRight className="text-emerald-600 mr-2 flex-shrink-0 mt-1" size={18} />
+                    <span className="text-xs sm:text-sm md:text-base text-slate-700">{rec}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
             {result.nextSteps && (
-              <div className="mb-8 bg-slate-50 p-6 rounded-2xl border-2 border-slate-200">
-                <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-center">
-                  <ArrowRight className="mr-2 text-emerald-600" size={24} />
+              <div className="mb-4 sm:mb-8 bg-slate-50 p-4 sm:p-6 rounded-xl sm:rounded-2xl border-2 border-slate-200">
+                <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-3 sm:mb-4 flex items-center">
+                  <ArrowRight className="mr-2 text-emerald-600" size={20} />
                   🚀 Prochaines Étapes
                 </h3>
-                <ul className="space-y-2">
+                <ul className="space-y-1.5 sm:space-y-2">
                   {result.nextSteps.map((step, index) => (
-                    <li key={index} className="text-slate-700 font-medium">
+                    <li key={index} className="text-xs sm:text-sm md:text-base text-slate-700 font-medium">
                       {step}
                     </li>
                   ))}
@@ -362,20 +362,20 @@ export default function Quiz() {
               </div>
             )}
 
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <button
                 onClick={restartQuiz}
-                className="flex-1 bg-gradient-to-r from-slate-600 to-slate-700 hover:from-slate-700 hover:to-slate-800 text-white px-6 py-4 rounded-2xl transition-all duration-300 shadow-lg flex items-center justify-center space-x-2"
+                className="flex-1 bg-gradient-to-r from-slate-600 to-slate-700 hover:from-slate-700 hover:to-slate-800 text-white px-4 sm:px-6 py-3 sm:py-4 rounded-xl sm:rounded-2xl transition-all duration-300 shadow-lg flex items-center justify-center space-x-2 text-sm sm:text-base"
               >
-                <RotateCcw size={20} />
+                <RotateCcw size={18} className="sm:w-5 sm:h-5" />
                 <span>🔄 Refaire le Quiz</span>
               </button>
 
               <button
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                className={`flex-1 bg-gradient-to-r ${colors.button} text-white px-6 py-4 rounded-2xl transition-all duration-300 shadow-lg flex items-center justify-center space-x-2`}
+                className={`flex-1 bg-gradient-to-r ${colors.button} text-white px-4 sm:px-6 py-3 sm:py-4 rounded-xl sm:rounded-2xl transition-all duration-300 shadow-lg flex items-center justify-center space-x-2 text-sm sm:text-base`}
               >
-                <Brain size={20} />
+                <Brain size={18} className="sm:w-5 sm:h-5" />
                 <span>🤖 Essayer le Chatbot IA</span>
               </button>
             </div>
@@ -386,17 +386,17 @@ export default function Quiz() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 py-8 px-4">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 py-4 sm:py-8 px-3 sm:px-4">
       <div className="max-w-3xl mx-auto">
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-slate-900 mb-2">
+        <div className="text-center mb-4 sm:mb-8">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-2">
             🎯 Quiz d'Éligibilité au Capital Développement
           </h1>
-          <p className="text-slate-600">Évaluez si votre PME est prête pour le Capital Développement</p>
+          <p className="text-sm sm:text-base text-slate-600">Évaluez si votre PME est prête pour le Capital Développement</p>
         </div>
 
-        <div className="mb-6">
-          <div className="flex justify-between text-sm text-slate-600 mb-2">
+        <div className="mb-4 sm:mb-6">
+          <div className="flex justify-between text-xs sm:text-sm text-slate-600 mb-2">
             <span>📊 Progression</span>
             <span>
               Question {currentQuestionIndex + 1} sur {questions.length}
@@ -410,29 +410,31 @@ export default function Quiz() {
           </div>
         </div>
 
-        <div className="bg-white rounded-3xl shadow-2xl p-8 animate-fadeIn">
-          <h2 className="text-2xl font-bold text-slate-900 mb-6">
+        <div className="bg-white rounded-2xl sm:rounded-3xl shadow-2xl p-4 sm:p-8 animate-fadeIn">
+          <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-slate-900 mb-4 sm:mb-6">
             {questions[currentQuestionIndex].question}
           </h2>
 
-          <div className="space-y-4">
+          <div className="space-y-3 sm:space-y-4">
             {questions[currentQuestionIndex].options.map((option, index) => (
               <button
                 key={index}
                 onClick={() => handleAnswerSelect(option.score, index)}
                 disabled={selectedAnswer !== null}
-                className={`w-full text-left px-6 py-4 rounded-2xl border-2 transition-all duration-300 ${
+                className={`w-full text-left px-4 sm:px-6 py-3 sm:py-4 rounded-xl sm:rounded-2xl border-2 transition-all duration-300 text-sm sm:text-base ${
                   selectedAnswer === index
                     ? 'bg-gradient-to-r from-emerald-600 to-emerald-700 text-white border-emerald-700 scale-105 shadow-xl'
                     : 'bg-white border-slate-300 hover:border-emerald-500 hover:shadow-lg hover:scale-102'
                 } disabled:cursor-not-allowed`}
               >
                 <div className="flex items-center justify-between">
-                  <span className={`font-medium ${selectedAnswer === index ? 'text-white' : 'text-slate-800'}`}>
+                  <span className={`font-medium ${
+                    selectedAnswer === index ? 'text-white' : 'text-slate-800'
+                  }`}>
                     {option.text}
                   </span>
                   {selectedAnswer === index && (
-                    <CheckCircle className="text-white animate-scaleIn" size={24} />
+                    <CheckCircle className="text-white animate-scaleIn" size={20} />
                   )}
                 </div>
               </button>
@@ -440,7 +442,7 @@ export default function Quiz() {
           </div>
         </div>
 
-        <div className="mt-6 text-center text-slate-500 text-sm">
+        <div className="mt-4 sm:mt-6 text-center text-slate-500 text-xs sm:text-sm">
           <p>💡 Répondez honnêtement pour obtenir l'évaluation la plus précise</p>
         </div>
       </div>

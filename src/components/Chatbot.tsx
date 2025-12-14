@@ -368,14 +368,14 @@ Management Buy-Out (MBO) - Rachat des actions du fonds par les fondateurs/dirige
                 </div>
               </div>
 
-              <div className="bg-white rounded-2xl shadow-2xl p-6 max-w-4xl border-2 border-blue-500">
-                <h3 className="text-3xl font-bold text-slate-900 mb-6 flex items-center">
-                  <Target className="mr-3 text-blue-600" size={28} />
-                  📋 Décision du Comité d'Investissement
+              <div className="bg-white rounded-xl sm:rounded-2xl shadow-2xl p-4 sm:p-6 max-w-4xl border-2 border-blue-500">
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 mb-4 sm:mb-6 flex items-center">
+                  <Target className="mr-2 sm:mr-3 text-blue-600" size={20} />
+                  <span className="text-base sm:text-xl md:text-2xl">📋 Décision du Comité</span>
                 </h3>
 
                 {/* Indicateurs Clés */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 mb-4 sm:mb-6">
                   <div className={`p-4 rounded-xl shadow-md ${
                     data.eligibility.includes('Éligible ✅') 
                       ? 'bg-gradient-to-br from-emerald-50 to-emerald-100 border-2 border-emerald-400' 
@@ -407,7 +407,7 @@ Management Buy-Out (MBO) - Rachat des actions du fonds par les fondateurs/dirige
                 </div>
 
                 {/* Métriques PME */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-5">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 mb-4 sm:mb-5">
                   <div className="bg-white border-2 border-slate-200 p-3 rounded-lg shadow-sm">
                     <p className="text-xs text-slate-500 font-semibold">Secteur</p>
                     <p className="text-sm font-bold text-slate-800">{data.sector}</p>
@@ -472,27 +472,27 @@ Management Buy-Out (MBO) - Rachat des actions du fonds par les fondateurs/dirige
         className={`mb-4 flex ${message.type === 'user' ? 'justify-end' : 'justify-start'} animate-fadeIn`}
       >
         {message.type === 'ai' && (
-          <div className="flex-shrink-0 mr-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-800 rounded-full flex items-center justify-center">
-              <Bot size={20} className="text-white" />
+          <div className="flex-shrink-0 mr-2 sm:mr-3">
+            <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-blue-600 to-blue-800 rounded-full flex items-center justify-center">
+              <Bot size={16} className="sm:w-5 sm:h-5 text-white" />
             </div>
           </div>
         )}
 
         <div
-          className={`max-w-md px-6 py-3 rounded-2xl shadow-lg ${
+          className={`max-w-[85%] sm:max-w-md px-3 sm:px-6 py-2 sm:py-3 rounded-xl sm:rounded-2xl shadow-lg ${
             message.type === 'user'
               ? 'bg-gradient-to-br from-emerald-600 to-emerald-700 text-white'
               : 'bg-white text-slate-800 border border-slate-200'
           }`}
         >
-          <p className="leading-relaxed">{message.content}</p>
+          <p className="leading-relaxed text-sm sm:text-base">{message.content}</p>
         </div>
 
         {message.type === 'user' && (
-          <div className="flex-shrink-0 ml-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-emerald-600 to-emerald-700 rounded-full flex items-center justify-center">
-              <User size={20} className="text-white" />
+          <div className="flex-shrink-0 ml-2 sm:ml-3">
+            <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-emerald-600 to-emerald-700 rounded-full flex items-center justify-center">
+              <User size={16} className="sm:w-5 sm:h-5 text-white" />
             </div>
           </div>
         )}
@@ -502,20 +502,20 @@ Management Buy-Out (MBO) - Rachat des actions du fonds par les fondateurs/dirige
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
-      <div className="max-w-5xl mx-auto px-4 py-8">
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-slate-900 mb-2">
+      <div className="max-w-5xl mx-auto px-3 sm:px-4 py-4 sm:py-8">
+        <div className="text-center mb-4 sm:mb-8">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-2">
             🏦 Comité d'Investissement Virtuel IA
           </h1>
-          <p className="text-slate-600 text-lg">
+          <p className="text-slate-600 text-sm sm:text-base md:text-lg px-2">
             Simulateur de Capital Développement pour PME tunisiennes
           </p>
-          <p className="text-sm text-slate-500 mt-2">
+          <p className="text-xs sm:text-sm text-slate-500 mt-2 px-2">
             💼 Analyse professionnelle • 📊 Décision en temps réel • 🎯 Exit Strategy
           </p>
         </div>
 
-        <div className="bg-white rounded-3xl shadow-2xl p-6 mb-6 min-h-[500px] max-h-[600px] overflow-y-auto">
+        <div className="bg-white rounded-2xl sm:rounded-3xl shadow-2xl p-3 sm:p-6 mb-4 sm:mb-6 min-h-[400px] sm:min-h-[500px] max-h-[500px] sm:max-h-[600px] overflow-y-auto">
           {messages.map((message, index) => renderMessage(message, index))}
 
           {isProcessing && (
@@ -538,23 +538,23 @@ Management Buy-Out (MBO) - Rachat des actions du fonds par les fondateurs/dirige
           <div ref={messagesEndRef} />
         </div>
 
-        <div className="flex space-x-4">
+        <div className="flex space-x-2 sm:space-x-4">
           <input
             type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyPress={handleKeyPress}
-            placeholder="Tapez votre réponse ici..."
+            placeholder="Tapez votre réponse..."
             disabled={isProcessing || currentQuestion >= questions.length}
-            className="flex-1 px-6 py-4 rounded-2xl border-2 border-slate-300 focus:border-blue-500 focus:outline-none shadow-lg disabled:bg-slate-100 disabled:cursor-not-allowed"
+            className="flex-1 px-3 sm:px-6 py-3 sm:py-4 rounded-xl sm:rounded-2xl border-2 border-slate-300 focus:border-blue-500 focus:outline-none shadow-lg disabled:bg-slate-100 disabled:cursor-not-allowed text-sm sm:text-base"
           />
           <button
             onClick={handleSend}
             disabled={isProcessing || currentQuestion >= questions.length || !input.trim()}
-            className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-2xl hover:from-blue-700 hover:to-blue-800 transition-all duration-300 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed flex items-center space-x-2 font-semibold"
+            className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-4 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl hover:from-blue-700 hover:to-blue-800 transition-all duration-300 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed flex items-center space-x-1 sm:space-x-2 font-semibold"
           >
-            <Send size={20} />
-            <span>Envoyer</span>
+            <Send size={18} className="sm:w-5 sm:h-5" />
+            <span className="hidden sm:inline">Envoyer</span>
           </button>
         </div>
       </div>
